@@ -7,17 +7,17 @@ class Item:
 		self.description = description
 		self.parent = parent
 
-	def getName():
+	def getName(self):
 		return self.name
-	def setName(newName):
+	def setName(self, newName):
 		self.name = newName
 
-	def getDesc():
+	def getDesc(self):
 		return self.description
-	def setDesc(newDesc):
+	def setDesc(self, newDesc):
 		self.description = newDesc
 
-	def getParent():
+	def getParent(self):
 		return self.parent
-	def setParent(newParent):
+	def setParent(self, newParent):
 		self.parent = newParent
