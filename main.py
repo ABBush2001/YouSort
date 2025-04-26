@@ -1,5 +1,13 @@
 import tkinter as tk
 from Item import Item
+from tkinter import ttk
+
+# Sample data (you can replace this with your own list)
+data = [
+    ["Alice", 120],
+    ["Bob", 95],
+    ["Charlie", 150]
+]
 
 # Create the main application window
 root = tk.Tk()
@@ -40,6 +48,17 @@ game_label.pack(pady=20)
 
 back_button = tk.Button(game_screen, text="Back to Menu", command=lambda: frames["MainMenu"].tkraise())
 back_button.pack(pady=10)
+
+# Inside game_screen
+tree = ttk.Treeview(game_screen, columns=("Name", "Score"), show="headings")
+tree.heading("Name", text="Name")
+tree.heading("Score", text="Score")
+tree.pack(pady=10, expand=True)
+
+# Insert data
+for row in data:
+    tree.insert("", tk.END, values=row)
+
 
 # Start with the main menu
 frames["MainMenu"].tkraise()
